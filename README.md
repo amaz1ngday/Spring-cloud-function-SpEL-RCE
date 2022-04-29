@@ -5,7 +5,7 @@
 
 python3 SpringCloudFunction_rce.py -url http://127.0.0.1:8088/
 
-<img width="790" alt="image" src="https://user-images.githubusercontent.com/38367493/165485812-a5e12b13-ce52-4b1b-bd76-17d1910bb602.png">
+<img width="565" alt="image" src="https://user-images.githubusercontent.com/38367493/165876405-edbbee29-bb5c-4cc3-a03c-881b8a9d9c4b.png">
 
 注入冰蝎
 
