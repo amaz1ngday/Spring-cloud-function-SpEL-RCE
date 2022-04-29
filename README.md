@@ -2,6 +2,7 @@
 针对Spring-cloud-function-SpEL表达式注入进行回显和内存马注入的exp
 # 使用
 回显探测
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/38367493/165876663-0e050317-7852-4f91-a683-1a060b5dfdd6.png">
 
 python3 SpringCloudFunction_rce.py -url http://127.0.0.1:8088/
 
