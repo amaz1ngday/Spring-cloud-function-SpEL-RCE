@@ -1,5 +1,9 @@
 # Spring-cloud-function-SpEL-RCE
 针对Spring-cloud-function-SpEL表达式注入进行回显和内存马注入的exp
+
+2022.10.17修改 
+spring2.6.x后续版本注册方式改变，更新后支持后续spring版本内存马注入。
+
 # 使用
 回显探测
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/38367493/165876663-0e050317-7852-4f91-a683-1a060b5dfdd6.png">
